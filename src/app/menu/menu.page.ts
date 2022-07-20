@@ -43,7 +43,7 @@ export class MenuPage {
   }
 
   get menus() {
-    return chain<Menu[]>(this.menuService.menus)
+    return chain(this.menuService.menus)
       .filter(m => this.contextService.isOpen(m))
       .filter(m => this.tagSet.size == 0 || !m.tags || some(m.tags, t => this.tagSet.has(t)))
       .filter(m => !this.search

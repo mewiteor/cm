@@ -72,7 +72,7 @@ export class MenuService {
 
   get contextTags() {
     const tags = new Set<String>()
-    chain<Menu[]>(this.menus)
+    chain(this.menus)
       .filter(m => this.contextService.isOpen(m))
       .forEach(m => forEach(m.tags, t => tags.add(t)))
       .value()

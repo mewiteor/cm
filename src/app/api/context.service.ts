@@ -21,7 +21,7 @@ export class ContextService {
   constructor() { }
 
   icon(c: string) {
-    return chain<Context[]>(this.contexts)
+    return chain(this.contexts)
       .filter(t => t.name == c)
       .first()
       .value()
